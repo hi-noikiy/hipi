@@ -11,7 +11,7 @@ Mock.mock('/v1/advert?for=home', 'get', {
     {
       'url': '@url(http)',
       'img': '@dataImage(300x600, 广告图)',
-      'title': '@csentence(1, 3)'
+      'title': '@ctitle(2)'
     }
   ]
 })
@@ -22,7 +22,7 @@ Mock.mock('/v1/advert?for=shop', 'get', {
     {
       'url': '@url(http)',
       'img': '@dataImage(300x600, Ben)',
-      'title': '@csentence(1, 3)'
+      'title': '@ctitle(2)'
     }
   ]
 })
@@ -35,7 +35,7 @@ Mock.mock('/v1/nav?for=home', 'get', {
   'Data|8': [
     {
       'url': '@url(http)',
-      'img': '@dataImage(300x600, Ben)',
+      'img': '@dataImage(100x100, Ben)',
       'title': '导航'
     }
   ]
@@ -72,7 +72,7 @@ Mock.mock('/v1/nav?for=shop', 'get', {
   'Data|4': [
     {
       'url': '@url(http)',
-      'img': '@dataImage(300x600, Ben)',
+      'img': '@dataImage(100x100, Ben)',
       'title': '@ctitle(2)'
     }
   ]
