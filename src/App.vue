@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style lang="less">
+@import "./assets/demo.less";
 @import '~vux/src/styles/reset.less';
 html,body {
   height: 100%;

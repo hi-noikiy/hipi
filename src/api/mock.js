@@ -1,5 +1,14 @@
 const Mock = require('mockjs')
-// const Random = Mock.Random
+const Random = Mock.Random
+
+Random.extend({
+  appliance: function (data) {
+    var appliances = ['电冰箱', '洗衣机', '热水器', '燃气灶', '热水壶', '跑步机', '电灯', '电热毯']
+    return this.pick(appliances)
+  }
+})
+
+Random.appliance()
 // 使用mockjs模拟数据
 
 // ---------------广告轮播---------------
@@ -74,6 +83,63 @@ Mock.mock('/v1/nav?for=shop', 'get', {
       'url': '@url(http)',
       'img': '@dataImage(100x100, Ben)',
       'title': '@ctitle(2)'
+    }
+  ]
+})
+
+Mock.mock('/v1/category?integrity=full', 'get', {
+  'Status': 200,
+  'Data': [
+    {
+      'categoryId': 1,
+      'categoryName': '家电配件',
+      'categoryImg|5': [
+        {
+          'url': '@url(http)',
+          'img': '@dataImage(400x100, Category)'
+        }
+      ],
+      'typeList|4': [
+        {
+          'typeId|+1': 1,
+          'typeName': '@appliance',
+          'typeImg': '@dataImage(100x100, type)'
+        }
+      ]
+    },
+    {
+      'categoryId': 1,
+      'categoryName': '家电配件',
+      'categoryImg|5': [
+        {
+          'url': '@url(http)',
+          'img': '@dataImage(400x100, Category)'
+        }
+      ],
+      'typeList|4': [
+        {
+          'typeId|+1': 1,
+          'typeName': '@appliance',
+          'typeImg': '@dataImage(100x100, type)'
+        }
+      ]
+    },
+    {
+      'categoryId': 1,
+      'categoryName': '家电配件',
+      'categoryImg|5': [
+        {
+          'url': '@url(http)',
+          'img': '@dataImage(400x100, Category)'
+        }
+      ],
+      'typeList|4': [
+        {
+          'typeId|+1': 1,
+          'typeName': '@appliance',
+          'typeImg': '@dataImage(100x100, type)'
+        }
+      ]
     }
   ]
 })

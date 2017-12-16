@@ -38,3 +38,11 @@ export const shopNav = () => axios.get('/v1/nav', {
     for: 'shop'
   }
 })
+
+// ---------------商城---------------
+
+export const shopCategory = () => axios.get('/v1/category', {
+  params: {
+    integrity: 'full'
+  }
+})
