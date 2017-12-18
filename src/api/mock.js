@@ -154,6 +154,7 @@ Mock.mock('/v1/product', 'get', {
       'img': '@dataImage(600x600, 商品图片)',
       'title': '@ctitle(2)'
     }],
+    'productCollection': '@boolean()',
     'productOriginalPrice': 1992.20,
     'productCurrentPrice': 1000.66,
     'productSales': 800,
@@ -173,7 +174,7 @@ Mock.mock('/v1/product', 'get', {
       'eUserId': '@integer(100, 500)',
       'eRate': '@integer(0, 5)',
       'eContent': '@csentence(10, 40)',
-      'eReply': '@csentence(10, 40)',
+      'eReply': '@csentence(0, 40)',
       'eReplyTime': '@datetime(yyyy-MM-dd HH:mm)'
     }]
   }

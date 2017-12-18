@@ -47,8 +47,9 @@ export const shopCategory = () => axios.get('/v1/category', {
   }
 })
 
-export const productInfoGet = (productId) => axios.get('/v1/product', {
+export const productInfoGet = (productId, userId) => axios.get('/v1/product', {
   patams: {
-    productId
+    productId,
+    userId
   }
 })

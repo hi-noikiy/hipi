@@ -81,4 +81,7 @@ body {
   position: absolute;
   z-index: 600;
 }
+.yd-backtop {
+  bottom: 10%;
+}
 </style>
