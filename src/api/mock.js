@@ -143,3 +143,38 @@ Mock.mock('/v1/category?integrity=full', 'get', {
     }
   ]
 })
+
+Mock.mock('/v1/product', 'get', {
+  'Status': 200,
+  'Data': {
+    'productId': 1,
+    'productName': '测试商品',
+    'productImg|5': [{
+      'url': '@url(http)',
+      'img': '@dataImage(600x600, 商品图片)',
+      'title': '@ctitle(2)'
+    }],
+    'productOriginalPrice': 1992.20,
+    'productCurrentPrice': 1000.66,
+    'productSales': 800,
+    'productInventory': 100,
+    'productInventoryWarning': 20,
+    'productDetailsImg|5': [{
+      'url': '@url(http)',
+      'img': '@dataImage(500x500, 商品详情图片)',
+      'title': '@ctitle(2)'
+    }],
+    'productSpecification': null,
+    'productEvaluation|4': [{
+      'eId|+1': 1,
+      'eTime': '@datetime(yyyy-MM-dd HH:mm)',
+      'eUserName': '@cname()',
+      'eUserHeadImg': '@dataImage(100x100, 评论人头像)',
+      'eUserId': '@integer(100, 500)',
+      'eRate': '@integer(0, 5)',
+      'eContent': '@csentence(10, 40)',
+      'eReply': '@csentence(10, 40)',
+      'eReplyTime': '@datetime(yyyy-MM-dd HH:mm)'
+    }]
+  }
+})

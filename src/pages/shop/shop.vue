@@ -17,127 +17,129 @@
       </x-header>
     
       <advert v-bind:list="shopAdvertList"></advert>
-        <div class="b-navigation">
-          <yd-grids-group :rows="4">
-            <yd-grids-item :link="nav.url" v-for="(nav, index) in shopNavList" :key="index">
-                <img slot="icon" :src="nav.img">
-                <span slot="text">{{ nav.title }}</span>
-            </yd-grids-item>
-          </yd-grids-group>
-        </div>
-        <div class="b-notice">
-          <img src="./../../assets/notice.png" class="b-notice-title" alt="">
-          
-          <yd-rollnotice autoplay="2000" height="40">
-            <yd-rollnotice-item>荣耀V9 3月超级钜惠！<br>荣耀V9 3月超级钜惠！</yd-rollnotice-item>
-            <yd-rollnotice-item>3.23京东超级品牌日格力盛典<br>3.23京东超级品牌日格力盛典</yd-rollnotice-item>
-            <yd-rollnotice-item>京东服饰 早春新品低至7折<br>京东服饰 早春新品低至7折</yd-rollnotice-item>
-          </yd-rollnotice>
-        </div>
+      <div class="b-navigation">
+        <yd-grids-group :rows="4">
+          <yd-grids-item :link="nav.url" v-for="(nav, index) in shopNavList" :key="index">
+              <img slot="icon" :src="nav.img">
+              <span slot="text">{{ nav.title }}</span>
+          </yd-grids-item>
+        </yd-grids-group>
+      </div>
+      <div class="b-notice">
+        <img src="./../../assets/notice.png" class="b-notice-title" alt="">
+        
+        <yd-rollnotice autoplay="2000" height="40">
+          <yd-rollnotice-item>荣耀V9 3月超级钜惠！<br>荣耀V9 3月超级钜惠！</yd-rollnotice-item>
+          <yd-rollnotice-item>3.23京东超级品牌日格力盛典<br>3.23京东超级品牌日格力盛典</yd-rollnotice-item>
+          <yd-rollnotice-item>京东服饰 早春新品低至7折<br>京东服饰 早春新品低至7折</yd-rollnotice-item>
+        </yd-rollnotice>
+      </div>
 
-        <div class="zone-activity">
-          <yd-grids-group :rows="2">
-            <yd-grids-item>
-              <div slot="else" class="b-grids-item">
-                <div class="item-l">
-                  <p class="item-l-title">秒杀区</p>
-                  <yd-countdown v-if="true" time="2017/12/17 00:00:00" class="b-countdown">
-                    <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
-                  </yd-countdown>
-                  <span v-if="false" class="b-subhead">秒杀</span>
-                  <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
-                </div>
-                <div class="item-r">
-                  <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
-                </div>
+      <div class="zone-activity">
+        <yd-grids-group :rows="2">
+          <yd-grids-item>
+            <div slot="else" class="b-grids-item">
+              <div class="item-l">
+                <p class="item-l-title">秒杀区</p>
+                <yd-countdown v-if="true" time="2017/12/17 00:00:00" class="b-countdown">
+                  <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
+                </yd-countdown>
+                <span v-if="false" class="b-subhead">秒杀</span>
+                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
               </div>
-            </yd-grids-item>
-            <yd-grids-item>
-              <div slot="else" class="b-grids-item">
-                <div class="item-l">
-                  <p class="item-l-title">爆款区</p>
-                  <yd-countdown v-if="1 === 2" time="2017/12/17 00:00:00" class="b-countdown">
-                    <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
-                  </yd-countdown>
-                  <span v-if="true" class="b-subhead">爆款</span>                  
-                  <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
-                </div>
-                <div class="item-r">
-                  <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
-                </div>
+              <div class="item-r">
+                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
               </div>
-            </yd-grids-item>
-            <yd-grids-item>
-              <div slot="else" class="b-grids-item">
-                <div class="item-l">
-                  <p class="item-l-title">0元试用区</p>
-                  <yd-countdown v-if="false" time="2017/12/17 00:00:00" class="b-countdown">
-                    <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
-                  </yd-countdown>
-                  <span v-if="true" class="b-subhead">试用</span>
-                  <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
-                </div>
-                <div class="item-r">
-                  <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
-                </div>
+            </div>
+          </yd-grids-item>
+          <yd-grids-item>
+            <div slot="else" class="b-grids-item">
+              <div class="item-l">
+                <p class="item-l-title">爆款区</p>
+                <yd-countdown v-if="1 === 2" time="2017/12/17 00:00:00" class="b-countdown">
+                  <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
+                </yd-countdown>
+                <span v-if="true" class="b-subhead">爆款</span>                  
+                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
               </div>
-            </yd-grids-item>
-            <yd-grids-item>
-              <div slot="else" class="b-grids-item">
-                <div class="item-l">
-                  <p class="item-l-title">积分兑换</p>
-                  <yd-countdown v-if="false" time="2017/12/17 00:00:00" class="b-countdown">
-                    <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
-                  </yd-countdown>
-                  <span v-if="true" class="b-subhead">抽奖兑换</span>
-                  <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
-                </div>
-                <div class="item-r">
-                  <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
-                </div>
+              <div class="item-r">
+                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
               </div>
-            </yd-grids-item>
-          </yd-grids-group>
-        </div>
+            </div>
+          </yd-grids-item>
+          <yd-grids-item>
+            <div slot="else" class="b-grids-item">
+              <div class="item-l">
+                <p class="item-l-title">0元试用区</p>
+                <yd-countdown v-if="false" time="2017/12/17 00:00:00" class="b-countdown">
+                  <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
+                </yd-countdown>
+                <span v-if="true" class="b-subhead">试用</span>
+                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
+              </div>
+              <div class="item-r">
+                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
+              </div>
+            </div>
+          </yd-grids-item>
+          <yd-grids-item>
+            <div slot="else" class="b-grids-item">
+              <div class="item-l">
+                <p class="item-l-title">积分兑换</p>
+                <yd-countdown v-if="false" time="2017/12/17 00:00:00" class="b-countdown">
+                  <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
+                </yd-countdown>
+                <span v-if="true" class="b-subhead">抽奖兑换</span>
+                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
+              </div>
+              <div class="item-r">
+                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
+              </div>
+            </div>
+          </yd-grids-item>
+        </yd-grids-group>
+      </div>
 
-        <div class="zone-categories">
-          <div class="cat-item" v-for="(cat, index) in shopCategoryList" :key="index">
-            <div class="cat-item-header">
-              <category-slider v-bind:list="cat.categoryImg"></category-slider>
-              <span>{{ cat.categoryName }}</span>
-            </div>
-            <div class="cat-item-types">
-              <yd-grids-group :rows="4">
-                <yd-grids-item v-for="(type, index) in cat.typeList" :key="index">
-                    <img slot="icon" :src="type.typeImg">
-                    <span slot="text">{{ type.typeName }}</span>
-                </yd-grids-item>
-            </yd-grids-group>
-            </div>
+      <div class="zone-categories">
+        <div class="cat-item" v-for="(cat, index) in shopCategoryList" :key="index">
+          <div class="cat-item-header">
+            <category-slider v-bind:list="cat.categoryImg"></category-slider>
+            <span>{{ cat.categoryName }}</span>
+          </div>
+          <div class="cat-item-types">
+            <yd-grids-group :rows="4">
+              <yd-grids-item v-for="(type, index) in cat.typeList" :key="index">
+                  <img slot="icon" :src="type.typeImg">
+                  <span slot="text">{{ type.typeName }}</span>
+              </yd-grids-item>
+          </yd-grids-group>
           </div>
         </div>
+      </div>
 
-        <div class="zone-recommendations">
-          <div class="recom-header">
-            <divider>猜你喜欢</divider>
-          </div>
-          <yd-list theme="1">
-            <yd-list-item v-for="(item, key) in list" :key="key">
-                <img slot="img" :src="item.img">
-                <span slot="title">{{item.title}}</span>
-                <yd-list-other slot="other">
-                    <div>
-                        <span class="list-price"><em>¥</em>{{item.price}}</span>
-                        <span class="list-del-price">¥{{item.w_price}}</span>
-                    </div>
-                    <div>content</div>
-                </yd-list-other>
-            </yd-list-item>
-          </yd-list>
+      <div class="zone-recommendations">
+        <div class="recom-header">
+          <divider>猜你喜欢</divider>
         </div>
+        <yd-list theme="1">
+          <yd-list-item v-for="(item, key) in list" :key="key" type="link" href="/product/1">
+              <img slot="img" :src="item.img">
+              <span slot="title">{{item.title}}</span>
+              <yd-list-other slot="other">
+                  <div>
+                      <span class="list-price"><em>¥</em>{{item.price}}</span>
+                      <span class="list-del-price">¥{{item.w_price}}</span>
+                  </div>
+                  <div>content</div>
+              </yd-list-other>
+          </yd-list-item>
+        </yd-list>
+      </div>
 
-        <divider>已经到底了</divider>
-        <yd-backtop></yd-backtop>
+      <divider>已经到底了</divider>
+
+      <yd-backtop></yd-backtop>
+
       <foot-guide slot="tabbar"></foot-guide>    
 
     </yd-layout>
@@ -146,7 +148,7 @@
 </template>
 
 <script>
-import { XHeader, Grid, GridItem, Icon, Divider } from 'vux'
+import { XHeader, Icon, Divider } from 'vux'
 import footGuide from './../../components/footer/footGuide'
 import advert from './../../components/advert/advert'
 import categorySlider from './../../components/shop/categorySlider'
@@ -155,18 +157,11 @@ import { shopAdvert, shopNav, shopCategory } from './../../api/axios'
 export default {
   components: {
     XHeader,
-    Grid,
-    GridItem,
     Icon,
     Divider,
     footGuide,
     advert,
     categorySlider
-  },
-  methods: {
-    goType () {
-      this.$router.push('/home')
-    }
   },
   data () {
     return {
@@ -223,7 +218,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     padding-left: 10px;
-    .search-fake_content .weui-icon-search {
+    .weui-icon-search {
       color: #ffffff;
     }
   }

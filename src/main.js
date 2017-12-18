@@ -7,11 +7,14 @@ import routes from './router/router'
 import YDUI from 'vue-ydui'
 import 'vue-ydui/dist/ydui.rem.css'
 import Vuex from 'vuex'
+// import 'animate.css'
 
 // 引入mockjs
 import './api/mock.js'
+
 // 引入WeChat-title
 Vue.use(require('vue-wechat-title'))
+// Vue.use(require('accounting'))
 // 使用YDUI
 Vue.use(YDUI)
 Vue.use(Vuex)
@@ -29,7 +32,17 @@ const store = new Vuex.Store({
 })
 
 const router = new VueRouter({
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      if (from.meta.keepAlive) {
+        from.meta.savedPosition = document.body.scrollTop
+      }
+      return { x: 0, y: to.meta.savedPosition || 0 }
+    }
+  }
 })
 
 router.beforeEach((to, from, next) => {

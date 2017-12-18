@@ -5,6 +5,7 @@ const songzhuang = r => require.ensure([], () => r(require('../pages/service/son
 // 商城
 const shop = r => require.ensure([], () => r(require('../pages/shop/shop')), 'shop')
 const category = r => require.ensure([], () => r(require('../pages/shop/category')), 'category')
+const product = r => require.ensure([], () => r(require('../pages/shop/children/product')), 'product')
 const cart = r => require.ensure([], () => r(require('../pages/shop/children/cart')), 'cart')
 
 const bill = r => require.ensure([], () => r(require('../pages/bill/bill')), 'bill')
@@ -30,7 +31,8 @@ export default [
         path: '/shop',
         component: shop,
         meta: {
-          title: '商城'
+          title: '商城',
+          keepAlive: true
         },
         children: [
           {
@@ -46,6 +48,14 @@ export default [
         name: '商品分类',
         meta: {
           title: '商品分类'
+        }
+      },
+      {
+        path: '/product/:productId',
+        component: product,
+        name: '商品详情',
+        meta: {
+          title: '商品详情'
         }
       },
       {

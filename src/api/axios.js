@@ -46,3 +46,9 @@ export const shopCategory = () => axios.get('/v1/category', {
     integrity: 'full'
   }
 })
+
+export const productInfoGet = (productId) => axios.get('/v1/product', {
+  patams: {
+    productId
+  }
+})
