@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getStore } from './common'
 
 // ---------------广告轮播---------------
 
@@ -47,9 +48,22 @@ export const shopCategory = () => axios.get('/v1/category', {
   }
 })
 
-export const productInfoGet = (productId, userId) => axios.get('/v1/product', {
-  patams: {
+export const productInfoGet = (productId) => axios.get('/v1/product', {
+  params: {
     productId,
-    userId
+    userId: getStore('userId')
+  }
+})
+
+export const getUser = () => axios.get('/v1/user', {
+  params: {
+    userId: getStore('userId')
+  }
+})
+
+export const getAddressList = () => axios.get('/v1/users', {
+  params: {
+    userId: getStore('userId'),
+    info: 'addressList'
   }
 })

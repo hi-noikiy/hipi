@@ -4,9 +4,10 @@ const home = r => require.ensure([], () => r(require('../pages/home/home')), 'ho
 const songzhuang = r => require.ensure([], () => r(require('../pages/service/songzhuang')), 'songzhuang')
 // 商城
 const shop = r => require.ensure([], () => r(require('../pages/shop/shop')), 'shop')
-const category = r => require.ensure([], () => r(require('../pages/shop/category')), 'category')
+const category = r => require.ensure([], () => r(require('../pages/shop/children/category')), 'category')
 const product = r => require.ensure([], () => r(require('../pages/shop/children/product')), 'product')
 const cart = r => require.ensure([], () => r(require('../pages/shop/children/cart')), 'cart')
+const shopcart = r => require.ensure([], () => r(require('../pages/shop/children/shopcart')), 'shopcart')
 
 const bill = r => require.ensure([], () => r(require('../pages/bill/bill')), 'bill')
 const my = r => require.ensure([], () => r(require('../pages/my/my')), 'my')
@@ -39,24 +40,29 @@ export default [
             path: 'cart',
             name: '购物车',
             component: cart
+          },
+          {
+            path: 'shopcart',
+            name: '购物车',
+            component: shopcart
+          },
+          {
+            path: 'product/:productId',
+            component: product,
+            name: '商品详情',
+            meta: {
+              title: '商品详情'
+            }
+          },
+          {
+            path: 'category',
+            component: category,
+            name: '商品分类',
+            meta: {
+              title: '商品分类'
+            }
           }
         ]
-      },
-      {
-        path: '/category',
-        component: category,
-        name: '商品分类',
-        meta: {
-          title: '商品分类'
-        }
-      },
-      {
-        path: '/product/:productId',
-        component: product,
-        name: '商品详情',
-        meta: {
-          title: '商品详情'
-        }
       },
       {
         path: '/bill',

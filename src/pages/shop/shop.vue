@@ -1,8 +1,8 @@
 <template>
   <div style="height:100%;">
-    <yd-layout>
+    <yd-layout v-if="$route.path === '/shop'">
       <x-header :left-options="{showBack: false}" slot="navbar">
-        <div slot="left" class="b-header-l" @click="$router.push('/category')">
+        <div slot="left" class="b-header-l" @click="$router.push('/shop/category')">
           <yd-icon name="type" size="24px"></yd-icon>
         </div>
         <div class="search-fake" slot="overwrite-title">
@@ -11,7 +11,7 @@
             <span>搜索</span>
           </div>
         </div>
-        <div slot="right" class="b-header-r" @click="$router.push('/shopcart')">
+        <div slot="right" class="b-header-r" @click="$router.push('/shop/shopcart')">
           <yd-icon name="shopcart-outline" size="24px"></yd-icon>
         </div>
       </x-header>
@@ -122,7 +122,7 @@
           <divider>猜你喜欢</divider>
         </div>
         <yd-list theme="1">
-          <yd-list-item v-for="(item, key) in list" :key="key" type="link" href="/product/1">
+          <yd-list-item v-for="(item, key) in list" :key="key" type="link" href="/shop/product/1">
               <img slot="img" :src="item.img">
               <span slot="title">{{item.title}}</span>
               <yd-list-other slot="other">
@@ -143,7 +143,7 @@
       <foot-guide slot="tabbar"></foot-guide>    
 
     </yd-layout>
-
+    <router-view></router-view>
   </div>
 </template>
 
@@ -370,7 +370,5 @@ export default {
     bottom: 50%;
   }
 }
-.yd-backtop {
-  bottom: 10%;
-}
+
 </style>
