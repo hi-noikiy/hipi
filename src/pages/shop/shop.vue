@@ -45,10 +45,10 @@
                   <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
                 </yd-countdown>
                 <span v-if="false" class="b-subhead">秒杀</span>
-                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
+                <img class="item-l-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
               <div class="item-r">
-                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
+                <img class="item-r-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
             </div>
           </yd-grids-item>
@@ -60,10 +60,10 @@
                   <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
                 </yd-countdown>
                 <span v-if="true" class="b-subhead">爆款</span>                  
-                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
+                <img class="item-l-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
               <div class="item-r">
-                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
+                <img class="item-r-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
             </div>
           </yd-grids-item>
@@ -75,10 +75,10 @@
                   <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
                 </yd-countdown>
                 <span v-if="true" class="b-subhead">试用</span>
-                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
+                <img class="item-l-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
               <div class="item-r">
-                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
+                <img class="item-r-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
             </div>
           </yd-grids-item>
@@ -90,10 +90,10 @@
                   <em>{%h1}{%h2}</em><span>:</span><em>{%m1}{%m2}</em><span>:</span><em>{%s1}{%s2}</em>
                 </yd-countdown>
                 <span v-if="true" class="b-subhead">抽奖兑换</span>
-                <img class="item-l-img" src="./../../assets/pap.er/Fr6zexbmjmc.png">
+                <img class="item-l-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
               <div class="item-r">
-                <img class="item-r-img" src="./../../assets/pap.er/fvzTD7cYkD0.png">
+                <img class="item-r-img" src="./../../assets/Fr6zexbmjmc.png">
               </div>
             </div>
           </yd-grids-item>
@@ -308,7 +308,7 @@ export default {
     .cat-item-header {
       height: 2rem;
       position: relative;
-      // background: url('./../../assets/pap.er/5FHv5nS7yGg.png') no-repeat;
+      // background: url('./../../assets/5FHv5nS7yGg.png') no-repeat;
       // background-position: center;
       // background-size: cover;
       // background-color: #777777;
