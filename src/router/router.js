@@ -9,6 +9,8 @@ const product = r => require.ensure([], () => r(require('../pages/shop/children/
 const cart = r => require.ensure([], () => r(require('../pages/shop/children/cart')), 'cart')
 const shopcart = r => require.ensure([], () => r(require('../pages/shop/children/shopcart')), 'shopcart')
 
+// 订单
+const order = r => require.ensure([], () => r(require('../pages/order/order')), 'order')
 const bill = r => require.ensure([], () => r(require('../pages/bill/bill')), 'bill')
 const my = r => require.ensure([], () => r(require('../pages/my/my')), 'my')
 
@@ -39,7 +41,10 @@ export default [
           {
             path: 'cart',
             name: '购物车',
-            component: cart
+            component: cart,
+            meta: {
+              title: '购物车'
+            }
           },
           {
             path: 'shopcart',
@@ -69,6 +74,13 @@ export default [
         component: bill,
         meta: {
           title: '订单'
+        }
+      },
+      {
+        path: '/order',
+        component: order,
+        meta: {
+          title: '填写订单'
         }
       },
       {

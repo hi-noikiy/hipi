@@ -56,7 +56,7 @@
       <group class="b-group b-evaluation">
         <cell class="b-cell">
           <div slot="title" class="e-title">
-            商品评价（{{ productInfo.productEvaluation.length }}）
+            商品评价（{{ evaluationLength }}）
           </div>
         </cell>
         <cell class="e-user" v-for="(eva, index) in productInfo.productEvaluation" :key="index">
@@ -102,7 +102,7 @@
       <van-goods-action-big-btn>
         加入购物车
       </van-goods-action-big-btn>
-      <van-goods-action-big-btn :primary="productInfo.productInventory === 0? false : true" :class="[productInfo.productInventory === 0? 'van-button--disabled' : '']">
+      <van-goods-action-big-btn @click="$router.push('/order')" :primary="productInfo.productInventory === 0? false : true" :class="[productInfo.productInventory === 0? 'van-button--disabled' : '']">
         {{ productInfo.productInventory === 0? '暂时无货' : '立即购买' }}
       </van-goods-action-big-btn>
     </van-goods-action>
@@ -135,12 +135,12 @@ export default {
   },
   methods: {
     success (src, ele) {
-      console.log('success load', src)
+      // console.log('success load', src)
       const eh = ele.height
       ele.parentNode.style.height = '' + eh + 'px'
     },
     error (src, ele, msg) {
-      console.log('error load', msg, src)
+      // console.log('error load', msg, src)
       const eh = ele.height
       ele.parentNode.style.height = '' + eh + 'px'
     },
@@ -213,7 +213,8 @@ export default {
     return {
       productInfo: [],
       collection: false,
-      tabIndex: 0
+      tabIndex: 0,
+      evaluationLength: 0
     }
   },
   mounted () {
@@ -222,6 +223,7 @@ export default {
       this.productInfo.productCurrentPrice = accounting.formatMoney(this.productInfo.productCurrentPrice, '¥')
       this.productInfo.productOriginalPrice = accounting.formatMoney(this.productInfo.productOriginalPrice, '¥')
       this.collection = this.productInfo.productCollection
+      this.evaluationLength = this.productInfo.productEvaluation.length
       console.log(res.data)
     })
     this.$nextTick(function () {

@@ -1,96 +1,97 @@
 <template>
-  <yd-layout>
-    <yd-checklist v-model="checklist4" :label="true" ref="cartCheckList" color="#f85">
-      <yd-checklist-item val="aaa">
-          <yd-flexbox style="padding: 15px 0;">
-              <img src="//img12.360buyimg.com/n1/jfs/t2122/170/1006550413/171711/de099a6f/56399d01N67907749.jpg" class="demo-checklist-img">
-              <yd-flexbox-item align="top">
-                  [aaa] 类似购物车 / 类似购物车<br/>
-                  <span style="color: blue;">点击这边的内容是禁止选中的</span><br/>
-                  <p style="color:#F00;">选中值：{{checklist4}}</p>
-                  <yd-spinner v-model="spinner3"></yd-spinner>
-              </yd-flexbox-item>
-          </yd-flexbox>
-      </yd-checklist-item>
-      <yd-checklist-item val="bbb">
-          <yd-flexbox style="padding: 15px 0;">
-              <img src="//img10.360buyimg.com/n1/jfs/t6925/75/2382158459/437865/f3931d24/598be5b1N24d949fe.jpg" class="demo-checklist-img">
-              <yd-flexbox-item align="top">
-                  [bbb] 南非进口红西柚 6个 单果重约300-330g 新鲜水果
-              </yd-flexbox-item>
-          </yd-flexbox>
-      </yd-checklist-item>
-      <yd-checklist-item val="ccc">
-          <yd-flexbox style="padding: 15px 0;">
-              <img src="//img14.360buyimg.com/n1/jfs/t3232/69/539717695/176729/cf1ff3d8/57baa5d1N901ffea5.jpg" class="demo-checklist-img">
-              <yd-flexbox-item align="top">
-                  [ccc] 展卉 越南进口红心火龙果 3个装中果 单果约300~350g 新鲜水果
-              </yd-flexbox-item>
-          </yd-flexbox>
-      </yd-checklist-item>
-    </yd-checklist>
-    <div slot="tabbar" class="b-submit">
-      <div class="b-check-all">
-        <yd-checkbox v-model="isCheckAll" shape="circle" :change="checkAll" color="#f85">全选</yd-checkbox>
-      </div>
-      <p class="b-total">合计：{{ accounting.formatMoney(this.productInfo.productCurrentPrice, '¥') }}</p>
-      <van-button type="primary" bottomAction class="b-button">按钮</van-button>
-    </div>
-
-  </yd-layout>
-  
+  <div>
+    <van-checkbox-group class="card-goods" v-model="checkedGoods">
+      <van-checkbox
+        class="card-goods__item"
+        v-for="item in goods"
+        :key="item.id"
+        :name="item.id"
+      >
+        <van-card
+          :title="item.title"
+          :desc="item.desc"
+          :num="item.num"
+          :price="formatPrice(item.price)"
+          :thumb="item.thumb"
+        />
+      </van-checkbox>
+    </van-checkbox-group>
+    <van-submit-bar
+      :price="totalPrice"
+      :disabled="!checkedGoods.length"
+      :buttonText="submitBarText"
+    />
+  </div>
 </template>
 
 <script>
-import { Button, Row, Col } from 'vant'
+import { Checkbox, CheckboxGroup, Card, SubmitBar } from 'vant'
 export default {
   components: {
-    [Button.name]: Button,
-    [Row.name]: Row,
-    [Col.name]: Col
-  },
-  methods: {
-    change (value, isCheckAll) {
-      this.isCheckAll = isCheckAll
-    },
-    checkAll () {
-      this.isCheckAll = !this.isCheckAll
-      this.$refs.cartCheckList.$emit('ydui.checklist.checkall', this.isCheckAll)
-    }
+    [Card.name]: Card,
+    [Checkbox.name]: Checkbox,
+    [SubmitBar.name]: SubmitBar,
+    [CheckboxGroup.name]: CheckboxGroup
   },
   data () {
     return {
-      checklist4: [],
-      spinner3: 0,
-      isCheckAll: false
+      checkedGoods: ['1', '2', '3'],
+      goods: [{
+        id: '1',
+        title: '进口香蕉',
+        desc: '约250g，2根',
+        price: 200,
+        num: 1,
+        thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg'
+      }, {
+        id: '2',
+        title: '陕西蜜梨',
+        desc: '约600g',
+        price: 690,
+        num: 1,
+        thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/f6aabd6ac5521195e01e8e89ee9fc63f.jpeg'
+      }, {
+        id: '3',
+        title: '美国伽力果',
+        desc: '约680g/3个',
+        price: 2680,
+        num: 1,
+        thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/320454216bbe9e25c7651e1fa51b31fd.jpeg'
+      }]
+    }
+  },
+  methods: {
+    formatPrice (price) {
+      return (price / 100).toFixed(2)
+    }
+  },
+  computed: {
+    submitBarText () {
+      const count = this.checkedGoods.length
+      return '结算' + (count ? `(${count})` : '')
+    },
+    totalPrice () {
+      return this.goods.reduce((total, item) => total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0), 0)
     }
   }
 }
 </script>
 
 <style lang="less">
-.b-submit {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  .b-check-all {
-    padding: 12px;
-    height: 50px;
-    width: 25%;
-    .yd-checkbox {
-      display: flex;
-      align-items: center;
+.card-goods {
+  padding: 10px 0;
+  background-color: #fff;
+  &__item {
+    background-color: #fafafa;
+    .van-checkbox__input {
+      margin: 40px 0 0 10px;
     }
-  }
-  .b-button {
-    max-width: 40%;
-  }
-  .b-total {
-    display: inline-block;
-    font-size: 15px;
-    padding: 0 .24rem;
+    .van-checkbox__label {
+      margin-left: 20px;
+    }
+    .van-card__price {
+      color: #f44;
+    }
   }
 }
 </style>
-

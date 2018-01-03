@@ -11,7 +11,7 @@
             <span>搜索</span>
           </div>
         </div>
-        <div slot="right" class="b-header-r" @click="$router.push('/shop/shopcart')">
+        <div slot="right" class="b-header-r" @click="$router.push('/shop/cart')">
           <yd-icon name="shopcart-outline" size="24px"></yd-icon>
         </div>
       </x-header>
@@ -257,7 +257,7 @@ export default {
         flex-direction: column;
         .item-l-img {
           height: 1rem;
-          width: auto;
+          width: 1rem;
           border-radius: .1rem;
         }
         .b-countdown {
@@ -288,7 +288,7 @@ export default {
         flex-direction: column;
         .item-r-img {
           height: 2rem;
-          width: auto;
+          width: 1.5rem;
           border-radius: .1rem;
         }
       }

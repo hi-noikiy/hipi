@@ -55,10 +55,10 @@ export const productInfoGet = (productId) => axios.get('/v1/product', {
   }
 })
 
-export const getUser = () => axios.get('/v1/user', {
-  params: {
-    userId: getStore('userId')
-  }
+export const getUser = () => axios.get('/api/getusers', {
+  // params: {
+  //   userId: getStore('userId')
+  // }
 })
 
 export const getAddressList = () => axios.get('/v1/users', {

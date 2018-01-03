@@ -144,7 +144,7 @@ Mock.mock('/v1/category?integrity=full', 'get', {
   ]
 })
 
-Mock.mock('/v1/product', 'get', {
+Mock.mock('/v1/product?productId=1', 'get', {
   'Status': 200,
   'Data': {
     'productId': 1,

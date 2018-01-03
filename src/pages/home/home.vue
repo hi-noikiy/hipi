@@ -33,7 +33,7 @@
 import { Grid, GridItem } from 'vux'
 import footGuide from './../../components/footer/footGuide'
 import advert from './../../components/advert/advert'
-import { homeAdvert, homeNav, homeNavService } from './../../api/axios'
+import { homeAdvert, homeNav, homeNavService, getUser } from './../../api/axios'
 
 export default {
   components: {
@@ -61,6 +61,9 @@ export default {
     homeNavService().then(res => {
       this.homeNavServiceList = res.data.Data
       console.log(res.data)
+    })
+    getUser().then(res => {
+      console.log(res)
     })
   }
 }
