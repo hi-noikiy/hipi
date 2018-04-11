@@ -1,6 +1,6 @@
 <template>
   <group class="c-group">
-    <cell :is-link="true" class="c-cell">
+    <cell :is-link="true" class="c-cell" link="/address">
       <div slot="title" class="c-title">
         <span>联系人</span>
         <span>18587748417</span>
@@ -56,6 +56,8 @@
       display: flex;
       // justify-content: space-between;
       align-items: center;
+      font-size: 15px;
+      line-height: .6rem;
       span:nth-child(2) {
         padding: 0 15px;
       }

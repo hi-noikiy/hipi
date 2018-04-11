@@ -35,8 +35,11 @@
         <van-cell v-if="needBaoYang" title="保养服务" class="b-switch-cell">
           <yd-switch v-model="serviceSwitch2"></yd-switch>
         </van-cell>
+        <van-cell title="优惠券" class="b-switch-cell" :is-link="true">
+          <p>省<em>¥1.5</em></p>
+        </van-cell>
       </van-cell-group>
-      <yd-popup v-model="payDeliveryDialog" :close-on-masker="false" position="right" width="90%" height="100%" class="b-popup">
+      <yd-popup v-model="payDeliveryDialog" :close-on-masker="false" position="right" width="80%" height="100%" class="b-popup">
         <van-cell-group>
           <van-cell title="支付方式">
             <yd-radio-group v-model="payMode" color="#1296db" size="20" class="b-radio-group">
@@ -196,7 +199,11 @@
           })
           return false
         }
-        this.payDeliveryDialog = false
+        this.$dialog.loading.open('请稍等')
+        setTimeout(() => {
+          this.$dialog.loading.close()
+          this.payDeliveryDialog = false
+        }, 1000)
       }
     }
   }

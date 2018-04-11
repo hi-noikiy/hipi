@@ -11,6 +11,9 @@ const shopcart = r => require.ensure([], () => r(require('../pages/shop/children
 
 // 订单
 const order = r => require.ensure([], () => r(require('../pages/order/order')), 'order')
+// 地址
+const addressList = r => require.ensure([], () => r(require('../pages/address/addressList')), 'addressList')
+const addressListEdit = r => require.ensure([], () => r(require('../pages/address/addressListEdit')), 'addressListEdit')
 const bill = r => require.ensure([], () => r(require('../pages/bill/bill')), 'bill')
 const my = r => require.ensure([], () => r(require('../pages/my/my')), 'my')
 
@@ -96,6 +99,20 @@ export default [
         name: '送装服务',
         meta: {
           title: '送装服务'
+        }
+      },
+      {
+        path: '/address',
+        component: addressList,
+        meta: {
+          title: '选择地址'
+        }
+      },
+      {
+        path: '/addressEdit',
+        component: addressListEdit,
+        meta: {
+          title: '管理地址'
         }
       }
     ]
